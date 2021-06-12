@@ -1,0 +1,15 @@
+{
+    "name": "vitorccs/yourls-api-save-by-keyword",
+    "description": "YOURLS plugin which updates the long URL of an existing keyword, or creates a new short URL with the supplied keyword",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Vitor Siqueira",
+            "email": "vitorccsiqueira@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    }
+}
