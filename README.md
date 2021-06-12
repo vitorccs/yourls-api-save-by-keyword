@@ -1,4 +1,4 @@
-yourls-api-save-by-keyword
+yourls-api-save-by-keyword [![Listed in Awesome YOURLS!](https://img.shields.io/badge/Awesome-YOURLS-C5A3BE)](https://github.com/YOURLS/awesome-yourls/)
 ===================
 
 Adds a new action `save_by_keyword` to the [YOURLS API](https://yourls.org/#API).
