@@ -38,6 +38,7 @@ function vccs_api_save_by_keyword()
     $keyword = yourls_get_protocol($keyword)
         ? yourls_get_relative_url($keyword)
         : $keyword;
+	$keyword = yourls_apply_filter('custom_keyword', $keyword, $url, $title);
 
     // Prevent fail status for zero rows affected
     if (vccs_no_parameter_changes($url, $keyword, $title)) {
