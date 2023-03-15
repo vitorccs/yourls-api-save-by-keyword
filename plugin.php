@@ -39,6 +39,11 @@ function vccs_api_save_by_keyword()
         ? yourls_get_relative_url($keyword)
         : $keyword;
 
+    // sanitize values
+    $url = yourls_sanitize_url($url);
+    $keyword = yourls_sanitize_keyword($keyword, true);
+    $title = yourls_sanitize_title($title);
+
     // Prevent fail status for zero rows affected
     if (vccs_no_parameter_changes($url, $keyword, $title)) {
         $response = [
@@ -79,9 +84,6 @@ function vccs_no_parameter_changes($url, $keyword, $title)
     global $ydb;
 
     $table = YOURLS_DB_TABLE_URL;
-    $url = yourls_sanitize_url($url);
-    $keyword = yourls_sanitize_string($keyword);
-    $title = yourls_sanitize_title($title);
 
     $bindings = ['url' => $url, 'keyword' => $keyword, 'title' => $title];
     $sql = "SELECT COUNT(keyword) FROM `$table` WHERE `url` = :url AND `title` = :title AND `keyword` = :keyword;";
